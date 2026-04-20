@@ -1,0 +1,16 @@
+.input-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+    margin: auto;
+    padding: 25px;
+    background-color: #F5F5DC;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.login-button {
+    margin-top: 1.5rem !important;
+  
+}
+
