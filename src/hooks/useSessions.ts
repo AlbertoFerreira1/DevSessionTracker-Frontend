@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/set-state-in-effect */
+
 import { useState, useCallback, useEffect } from "react";
 import * as SessionApi from "../services/sessionApi";
 import type { SessionData } from "../models/Sessions";

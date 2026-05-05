@@ -8,5 +8,5 @@ export interface SessionData {
     notes?: string | null;
     blockers?: string | null;
     focus_score: number | null;
-    
 }
+

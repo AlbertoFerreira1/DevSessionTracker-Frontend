@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import "./Dashboard.css";
-import { SessionList } from "../components/SessionList";
+import { SessionOverview } from "../components/session/SessionOverview";
 
 export const Dashboard = () => {
   return (
@@ -17,7 +17,7 @@ export const Dashboard = () => {
         </Typography>
 
         <CardContent>
-            <SessionList />
+          <SessionOverview></SessionOverview>
         </CardContent>
       </Card>
     </Box>

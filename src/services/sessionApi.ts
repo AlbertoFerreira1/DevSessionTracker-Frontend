@@ -18,3 +18,22 @@ export const fetchUserSessions = async () => {
 
   return res.json();
 };
+
+export const fetchMonthlySession = async () => {
+  const token = getToken();
+  const user_id = localStorage.getItem("user_id");
+  const url = import.meta.env.VITE_API_URL;
+
+  const res = await fetch(`${url}/sessions/getMonthlySessions/${user_id}` , {
+    headers: {
+      Authorization: 'Bearer ' + token,
+      "Content-Type": "Application/json",
+    },
+  });
+
+  if(!res.ok) {
+    throw new Error('Failed to fetch Monthly User Sessions');
+  }
+
+  return res.json();
+}
