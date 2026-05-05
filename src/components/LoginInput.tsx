@@ -60,8 +60,10 @@ export const LoginInput = ({ onLoginSuccess }: LoginInputProps) => {
         setSnackOpen(true);
         return;
       }
+      console.log(responseData);
       localStorage.setItem("token", responseData.token);
-      localStorage.setItem("username", responseData.username);
+      localStorage.setItem("username", responseData.userData.username);
+      localStorage.setItem('user_id', responseData.userData.id);
       setSnackSeverity("success");
       setSnackMessage(responseData?.message || "Login successful");
       setSnackOpen(true);

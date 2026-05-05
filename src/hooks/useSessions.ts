@@ -13,7 +13,7 @@ export const useSessions = () => {
       setLoading(true);
       setError(null);
       const items = await SessionApi.fetchUserSessions();
-      setData(items);
+      setData(items.data);
     } catch (error) {
       setError(
         error instanceof Error ? error.message : "Error fetching the Api",
