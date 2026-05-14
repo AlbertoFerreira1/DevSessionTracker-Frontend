@@ -1,11 +1,14 @@
 import { Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { LoginInput } from "../components/LoginInput";
 
-type LoginScreenProps = {
-  onLoginSuccess: () => void;
-};
+export const LoginScreen = () => {
+  const navigate = useNavigate();
 
-export const LoginScreen = ({ onLoginSuccess }: LoginScreenProps) => {
+  const handleLoginSuccess = () => {
+    navigate("/", { replace: true });
+  };
+
   return (
     <Box
       sx={{
@@ -29,7 +32,7 @@ export const LoginScreen = ({ onLoginSuccess }: LoginScreenProps) => {
           Keep track of what you are coding and learning!
         </Typography>
 
-        <LoginInput onLoginSuccess={onLoginSuccess} />
+        <LoginInput onLoginSuccess={handleLoginSuccess} />
       </Box>
     </Box>
   );

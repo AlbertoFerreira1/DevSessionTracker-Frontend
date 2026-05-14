@@ -9,7 +9,7 @@ export const Dashboard = () => {
         sx={{ backgroundColor: "#000E2F", color: "white", minWidth: "60%" }}
       >
         <Typography
-          variant="h5"
+          variant="h6"
           align="center"
           sx={{ padding: "5px", fontVariant: "small-caps" }}
         >

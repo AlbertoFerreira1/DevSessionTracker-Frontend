@@ -13,10 +13,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import DataObjectIcon from "@mui/icons-material/DataObject";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import SettingsIcon from '@mui/icons-material/Settings';
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import SettingsIcon from "@mui/icons-material/Settings";
 import { ChevronLeft } from "@mui/icons-material";
 import "./Header.css";
+import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   handleLogout: () => void;
@@ -25,6 +26,7 @@ interface HeaderProps {
 export const Header = ({ handleLogout }: HeaderProps) => {
   const [open, setOpen] = useState<boolean>(false);
   const [openDialog, setOpenDialog] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -66,7 +68,7 @@ export const Header = ({ handleLogout }: HeaderProps) => {
           Dev Session Tracker
         </Typography>
         <IconButton onClick={logoutConfirmation}>
-          <LogoutIcon sx={{color:'white'}}></LogoutIcon>
+          <LogoutIcon sx={{ color: "white" }}></LogoutIcon>
         </IconButton>
       </Box>
       <Drawer
@@ -82,8 +84,24 @@ export const Header = ({ handleLogout }: HeaderProps) => {
         <IconButton onClick={handleDrawerClose}>
           <ChevronLeft></ChevronLeft>
         </IconButton>
-        <Button startIcon={<DashboardIcon />}>Dashboard</Button>
-        <Button startIcon={<DataObjectIcon />}>My Sessions</Button>
+        <Button
+          startIcon={<DashboardIcon />}
+          onClick={() => {
+            navigate("/");
+            setOpen(false);
+          }}
+        >
+          Dashboard
+        </Button>
+        <Button
+          startIcon={<DataObjectIcon />}
+          onClick={() => {
+            navigate("/my-sessions");
+            setOpen(false);
+          }}
+        >
+          My Sessions
+        </Button>
         <Button startIcon={<AddCircleIcon />}>Add Session</Button>
         <Button startIcon={<SettingsIcon />}>Settings</Button>
       </Drawer>

@@ -1,6 +1,6 @@
-import { useSessions } from "../hooks/useSessions";
+import { useSessions } from "../../hooks/useSessions";
 import { Box, List, ListItem, Typography } from "@mui/material";
-import { formatDateOnly } from "../utils/util";
+import { formatDateOnly } from "../../utils/util";
 
 export const SessionList = () => {
   const { data, loading, error } = useSessions();

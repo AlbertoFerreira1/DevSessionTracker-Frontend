@@ -12,6 +12,7 @@
 }
 
 .confirmation-dialog {
-  background-color: black;
+  background-color: #000E2F;
+  padding: 15px;
   color: white;
 }

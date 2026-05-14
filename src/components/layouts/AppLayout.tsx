@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { Header } from "./components/layouts/Header";
+import { Header } from "./Header";
 
 export function AppLayout() {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ export function AppLayout() {
       <header>
         <Header handleLogout={handleLogout} />
       </header>
+
       <main>
         <Outlet />
       </main>

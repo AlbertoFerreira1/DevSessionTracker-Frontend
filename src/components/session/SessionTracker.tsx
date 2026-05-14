@@ -1,11 +1,9 @@
 import type { SessionData } from "../../models/Sessions";
 import { getTheMonth, getMotivationMessage } from "../../utils/util";
 
-export const SessionTracker = ({ data }: { data: SessionData[] }) => {
-  console.log(data);
-
-  const TotalMinutesInSession = data?.reduce(
-    (acc, session) => acc + session.duration_minutes,
+export const SessionTracker = ({ data }: { data: SessionData[] | null }) => {
+  const totalMinutesInSession = (data ?? []).reduce(
+    (acc, session) => acc + (session.duration_minutes ?? 0),
     0,
   );
 
@@ -20,12 +18,10 @@ export const SessionTracker = ({ data }: { data: SessionData[] }) => {
       {!!data?.length && (
         <div>
           <p>
-            You studied {TotalMinutesInSession} minutes this month of{" "}
+            You studied {totalMinutesInSession} minutes this month of{" "}
             {getTheMonth()}
           </p>
-          <p>
-            {getMotivationMessage(TotalMinutesInSession)}
-          </p>
+          <p>{getMotivationMessage(totalMinutesInSession)}</p>
         </div>
       )}
     </>
